@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Sistema de cadastro de pacientes para clínica médica">
+    <title>Clínica Médica - Cadastro de Pacientes</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon opcional -->
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+</head>
+<body>
+    <!-- Container principal -->
+    <div class="container">
+        <!-- Cabeçalho -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🏥</span>
+                <h1>Clínica Médica</h1>
+            </div>
+            <p class="subtitle">Sistema de Cadastro de Pacientes</p>
+        </header>
+
+        <!-- Área do formulário -->
+        <main>
+            <div class="form-card">
+                <h2>Novo Cadastro</h2>
+                <p class="form-description">Preencha os dados abaixo para cadastrar um paciente</p>
+
+                <!-- Formulário de cadastro -->
+                <form id="patientForm" class="patient-form">
+                    <!-- Campo Nome -->
+                    <div class="form-group">
+                        <label for="name">
+                            Nome Completo <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            placeholder="Digite o nome completo do paciente"
+                            autocomplete="off"
+                        >
+                        <small class="error-message" id="nameError"></small>
+                    </div>
+
+                    <!-- Campo Celular -->
+                    <div class="form-group">
+                        <label for="phone">
+                            Celular <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            name="phone" 
+                            placeholder="(99) 99999-9999"
+                            autocomplete="off"
+                        >
+                        <small class="error-message" id="phoneError"></small>
+                        <small class="helper-text">Mínimo de 10 dígitos</small>
+                    </div>
+
+                    <!-- Campo Email -->
+                    <div class="form-group">
+                        <label for="email">
+                            E-mail <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="paciente@exemplo.com"
+                            autocomplete="off"
+                        >
+                        <small class="error-message" id="emailError"></small>
+                    </div>
+
+                    <!-- Botão de envio -->
+                    <button type="submit" id="submitBtn" class="btn-submit">
+                        <span class="btn-text">Cadastrar Paciente</span>
+                        <span class="btn-loading" style="display: none;">Carregando...</span>
+                    </button>
+                </form>
+
+                <!-- Área de mensagens globais -->
+                <div id="globalMessage" class="global-message"></div>
+            </div>
+
+            <!-- Seção de informações adicionais -->
+            <div class="info-section">
+                <div class="info-card">
+                    <div class="info-icon">✅</div>
+                    <h3>Dados Seguros</h3>
+                    <p>Seus dados são armazenados com segurança no Supabase</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📱</div>
+                    <h3>Responsivo</h3>
+                    <p>Acesse de qualquer dispositivo</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">⚡</div>
+                    <h3>Rápido</h3>
+                    <p>Cadastro instantâneo e eficiente</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Rodapé -->
+        <footer class="footer">
+            <p>&copy; 2024 Clínica Médica - Todos os direitos reservados</p>
+            <p>Sistema desenvolvido para cadastro de pacientes</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
